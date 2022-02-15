@@ -1,0 +1,31 @@
+# All the parameters to run this project is defined in this file.
+base:
+  project: winequality-project #name of the project
+  random_state: 42 #any constant that we want to use as random state/seed
+  target_col: TARGET #tareget col name
+
+data_source:
+  s3_source: data_given/winequality.csv # data source
+
+load_data:
+  raw_dataset_csv: data/raw/winequality.csv # i am taking data from s3 and putting it into raw state
+
+split_data:
+  train_path: data/processed/train_winequality.csv # after splitting dataset is put under this folder.
+  test_path: data/processed/test_winequality.csv 
+  test_size: 0.2
+
+estimators: # here we can set parameters for whicever algorithm we are using.
+  ElasticNet: # using elasticnet algo
+    params:
+      # alpha: 0.88
+      # l1_ratio: 0.89
+      alpha: 0.9
+      l1_ratio: 0.4
+model_dir: saved_models # model directory
+
+reports:
+  params: report/params.json
+  scores: report/scores.json
+
+webapp_model_dir: prediction_service/model/model.joblib
