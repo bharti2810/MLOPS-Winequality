@@ -5,7 +5,9 @@ base:
   target_col: TARGET #tareget col name
 
 data_source:
-  s3_source: data_given/winequality.csv # data source
+  s3_source: data_given/winequality.csv # data source, normally the data is kept somewhere else 
+  # like s3 bucket, so data is first loaded into data source the put into raw directory and processed
+  # dataset put into processed directory.
 
 load_data:
   raw_dataset_csv: data/raw/winequality.csv # i am taking data from s3 and putting it into raw state
