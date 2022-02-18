@@ -63,3 +63,13 @@ setup command -
 ```bash 
 pip install -e .
 ```
+
+create an artifacts folder in main directory
+
+mlflow server command -
+
+```
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0 -p 1234 
+
+ # artifacts stored in artifacts folder
+ # calling the host specified port number
