@@ -29,8 +29,9 @@ def index():
                 return jsonify(response)
         except Exception as e:
             print(e)
+            error={"error":e}
             # this error dictionary required in 404.html
-            return render_template("404.html",error=e)
+            return render_template("404.html",error=error)
     else:
         return render_template("index.html")
 
