@@ -3,10 +3,10 @@ name: Python application # name of application
 on: # trigger to run jobs i.e whenever we'll run a push or pull on main branch then only it will run
   push: 
     branches:
-    - mlops-main # branch name
+    - main-mlflow # branch name
   pull_request:
     branches:
-    - mlops-main # branch name
+    - main-mlflow # branch name
 
 jobs: # jobs that need to be run
   build:
